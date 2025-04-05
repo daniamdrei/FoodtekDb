@@ -1,0 +1,667 @@
+-- MariaDB dump 10.19  Distrib 10.4.32-MariaDB, for Win64 (AMD64)
+--
+-- Host: localhost    Database: Foodtek
+-- ------------------------------------------------------
+-- Server version	10.4.32-MariaDB
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `addresses`
+--
+
+DROP TABLE IF EXISTS `addresses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `addresses` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) unsigned NOT NULL,
+  `address_line` varchar(255) NOT NULL,
+  `country` varchar(100) NOT NULL,
+  `state` varchar(100) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `zip_code` varchar(20) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `addresses_user_id_foreign` (`user_id`),
+  CONSTRAINT `addresses_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `addresses`
+--
+
+LOCK TABLES `addresses` WRITE;
+/*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
+INSERT INTO `addresses` VALUES (1,44,'428 Destiney Mission Apt. 352','Timor-Leste','Tonga','Gleasonside','00366-9309','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(2,9,'24314 Delilah Glen Suite 448','Afghanistan','Iran','New Chelsey','75296-9807','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(3,17,'351 Jayde View Apt. 221','Marshall Islands','Senegal','Lake Katrine','67697-5846','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(4,15,'43006 Gracie Hill Suite 078','Wallis and Futuna','Central African Republic','Port Alvena','11143','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(5,16,'612 Schuster Pike Suite 425','British Virgin Islands','Armenia','West Litzyhaven','96595-9902','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(6,6,'7592 Ryleigh Expressway','Slovenia','Reunion','Mayrafort','82894','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(7,21,'93651 Hanna Summit','Singapore','Slovenia','Albury','02732','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(8,21,'51436 Goldner Coves Apt. 449','Israel','Montserrat','Bradtkeborough','38556','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(9,44,'49907 Kautzer Plains Apt. 148','Timor-Leste','Equatorial Guinea','Sadyeland','10778','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(10,25,'28125 Haven Views Suite 001','Belize','Cameroon','East Daija','59666-6861','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(11,35,'561 Weber Forest Apt. 917','Cocos (Keeling) Islands','Tanzania','Hillshaven','45695','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(12,26,'657 Hackett Mountains','Gambia','Grenada','South Eddie','46699-2262','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(13,38,'1113 Hailey Dam Apt. 578','Gibraltar','Myanmar','Abernathyfurt','35084-2346','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(14,21,'660 Randi Plaza','Bahamas','Equatorial Guinea','South Bartholome','71865','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(15,35,'75000 Hane Passage Apt. 998','Jersey','Australia','Port Josue','32181','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(16,2,'132 Wilderman Garden','Brazil','Dominica','Terryburgh','82277','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(17,28,'836 Schinner Underpass','Taiwan','Antigua and Barbuda','Powlowskishire','62023','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(18,5,'5857 Donald Inlet','Brazil','United States of America','Hermannmouth','38842','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(19,2,'983 Adrienne Ports Suite 280','Angola','El Salvador','East Floydside','54865','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(20,4,'9549 Kshlerin Throughway Suite 233','Faroe Islands','Czech Republic','Lake Antonio','35697','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(21,41,'69262 Providenci Isle Suite 370','Somalia','Djibouti','Juliushaven','09784-3243','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(22,41,'23639 Pfannerstill Row','Cape Verde','Mexico','West Moniqueport','37740-2366','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(23,14,'80153 Wiley Row Suite 621','Tuvalu','Liechtenstein','Francisshire','11999-7099','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(24,43,'29184 Quinton Route Apt. 130','Finland','Dominican Republic','Makaylafort','19349-6117','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(25,39,'34982 Vicky Burgs Suite 960','Saint Vincent and the Grenadines','Tonga','East Evert','85463-5267','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(26,16,'3618 Willy Drive Suite 094','Antigua and Barbuda','Nepal','New Jazlyn','07365','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(27,39,'79413 Kiel Junctions','China','Chad','Port Jakaylaville','54588-3061','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(28,16,'223 Helga Views Apt. 322','Saint Helena','Korea','Port Nathentown','99339','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(29,16,'6195 Claude Alley','Senegal','South Africa','Lake Chance','33095-0713','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL),(30,41,'90679 Kshlerin Coves Apt. 573','Palau','United States of America','Murraychester','27344','2025-03-28 01:04:19','2025-03-28 01:04:19',NULL);
+/*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cache`
+--
+
+DROP TABLE IF EXISTS `cache`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cache` (
+  `key` varchar(255) NOT NULL,
+  `value` mediumtext NOT NULL,
+  `expiration` int(11) NOT NULL,
+  PRIMARY KEY (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cache`
+--
+
+LOCK TABLES `cache` WRITE;
+/*!40000 ALTER TABLE `cache` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cache` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cache_locks`
+--
+
+DROP TABLE IF EXISTS `cache_locks`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cache_locks` (
+  `key` varchar(255) NOT NULL,
+  `owner` varchar(255) NOT NULL,
+  `expiration` int(11) NOT NULL,
+  PRIMARY KEY (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cache_locks`
+--
+
+LOCK TABLES `cache_locks` WRITE;
+/*!40000 ALTER TABLE `cache_locks` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cache_locks` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cart_items`
+--
+
+DROP TABLE IF EXISTS `cart_items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cart_items` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) unsigned NOT NULL,
+  `food_item_id` bigint(20) unsigned NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `cart_items_user_id_foreign` (`user_id`),
+  KEY `cart_items_food_item_id_foreign` (`food_item_id`),
+  CONSTRAINT `cart_items_food_item_id_foreign` FOREIGN KEY (`food_item_id`) REFERENCES `food_items` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `cart_items_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cart_items`
+--
+
+LOCK TABLES `cart_items` WRITE;
+/*!40000 ALTER TABLE `cart_items` DISABLE KEYS */;
+INSERT INTO `cart_items` VALUES (1,45,5,6,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(2,34,4,10,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(3,24,7,9,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(4,31,5,1,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(5,29,7,7,'2025-03-28 01:04:19','2025-03-28 01:04:19');
+/*!40000 ALTER TABLE `cart_items` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `categories`
+--
+
+DROP TABLE IF EXISTS `categories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `categories` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `restaurant_id` bigint(20) unsigned NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `categories_restaurant_id_foreign` (`restaurant_id`),
+  CONSTRAINT `categories_restaurant_id_foreign` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categories`
+--
+
+LOCK TABLES `categories` WRITE;
+/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,6,'Pizza','2025-03-28 01:04:19','2025-03-28 01:04:19'),(2,14,'waffle','2025-03-28 01:04:19','2025-03-28 01:04:19'),(3,2,'Pasta','2025-03-28 01:04:19','2025-03-28 01:04:19'),(4,3,'Burger','2025-03-28 01:04:19','2025-03-28 01:04:19'),(5,10,'shawrma','2025-03-28 01:04:19','2025-03-28 01:04:19'),(6,4,'Sandwiches','2025-03-28 01:04:19','2025-03-28 01:04:19');
+/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `delivery_statues`
+--
+
+DROP TABLE IF EXISTS `delivery_statues`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `delivery_statues` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `order_id` bigint(20) unsigned NOT NULL,
+  `status` enum('pending','dispatched','out_for_delivery','delivered') NOT NULL DEFAULT 'pending',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `delivery_statues_order_id_foreign` (`order_id`),
+  CONSTRAINT `delivery_statues_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `delivery_statues`
+--
+
+LOCK TABLES `delivery_statues` WRITE;
+/*!40000 ALTER TABLE `delivery_statues` DISABLE KEYS */;
+INSERT INTO `delivery_statues` VALUES (1,3,'dispatched','2025-03-28 01:04:20','2025-03-28 01:04:20'),(2,1,'dispatched','2025-03-28 01:04:20','2025-03-28 01:04:20'),(3,8,'pending','2025-03-28 01:04:20','2025-03-28 01:04:20'),(4,8,'dispatched','2025-03-28 01:04:20','2025-03-28 01:04:20'),(5,3,'dispatched','2025-03-28 01:04:20','2025-03-28 01:04:20'),(6,9,'delivered','2025-03-28 01:04:20','2025-03-28 01:04:20'),(7,9,'delivered','2025-03-28 01:04:20','2025-03-28 01:04:20'),(8,5,'out_for_delivery','2025-03-28 01:04:20','2025-03-28 01:04:20'),(9,7,'out_for_delivery','2025-03-28 01:04:20','2025-03-28 01:04:20'),(10,10,'delivered','2025-03-28 01:04:20','2025-03-28 01:04:20'),(11,10,'delivered','2025-03-28 01:04:20','2025-03-28 01:04:20'),(12,8,'out_for_delivery','2025-03-28 01:04:20','2025-03-28 01:04:20'),(13,7,'out_for_delivery','2025-03-28 01:04:20','2025-03-28 01:04:20'),(14,2,'dispatched','2025-03-28 01:04:20','2025-03-28 01:04:20'),(15,7,'pending','2025-03-28 01:04:20','2025-03-28 01:04:20'),(16,4,'delivered','2025-03-28 01:04:20','2025-03-28 01:04:20'),(17,2,'out_for_delivery','2025-03-28 01:04:20','2025-03-28 01:04:20'),(18,3,'dispatched','2025-03-28 01:04:20','2025-03-28 01:04:20'),(19,3,'out_for_delivery','2025-03-28 01:04:20','2025-03-28 01:04:20'),(20,1,'delivered','2025-03-28 01:04:20','2025-03-28 01:04:20');
+/*!40000 ALTER TABLE `delivery_statues` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `delivery_trackings`
+--
+
+DROP TABLE IF EXISTS `delivery_trackings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `delivery_trackings` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `order_id` bigint(20) unsigned NOT NULL,
+  `latitude` decimal(10,8) DEFAULT NULL,
+  `longitude` decimal(11,8) DEFAULT NULL,
+  `last_updated_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `delivery_trackings_order_id_foreign` (`order_id`),
+  CONSTRAINT `delivery_trackings_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `delivery_trackings`
+--
+
+LOCK TABLES `delivery_trackings` WRITE;
+/*!40000 ALTER TABLE `delivery_trackings` DISABLE KEYS */;
+INSERT INTO `delivery_trackings` VALUES (1,8,-10.26742700,-105.92229300,'2020-03-12 18:23:34','2025-03-28 01:04:20','2025-03-28 01:04:20'),(2,5,66.19452900,-133.94812700,'2012-10-18 20:52:43','2025-03-28 01:04:20','2025-03-28 01:04:20'),(3,9,4.71614800,83.63959000,'1977-02-19 07:29:17','2025-03-28 01:04:20','2025-03-28 01:04:20'),(4,9,-46.94930100,-173.75750200,'1993-06-01 02:45:37','2025-03-28 01:04:20','2025-03-28 01:04:20'),(5,5,-76.42657900,175.74338800,'2002-11-21 09:24:43','2025-03-28 01:04:20','2025-03-28 01:04:20'),(6,6,75.47293100,130.17903400,'2002-01-11 20:43:47','2025-03-28 01:04:20','2025-03-28 01:04:20'),(7,3,-2.91360100,62.23472400,'2019-02-04 02:45:20','2025-03-28 01:04:20','2025-03-28 01:04:20'),(8,7,-29.21686000,74.90140700,'1981-10-22 03:11:22','2025-03-28 01:04:20','2025-03-28 01:04:20'),(9,2,45.30879400,121.77712000,'2018-07-05 16:18:37','2025-03-28 01:04:20','2025-03-28 01:04:20'),(10,3,-49.33333900,-174.67914800,'2005-02-27 20:33:31','2025-03-28 01:04:20','2025-03-28 01:04:20'),(11,1,-10.61090900,-133.81323900,'1990-06-09 18:01:09','2025-03-28 01:04:20','2025-03-28 01:04:20'),(12,4,-73.04735200,99.91216000,'2010-01-08 09:10:28','2025-03-28 01:04:20','2025-03-28 01:04:20'),(13,4,-59.58130100,96.79222900,'2004-03-09 02:18:40','2025-03-28 01:04:20','2025-03-28 01:04:20'),(14,5,-24.82905300,107.12898500,'2001-06-27 09:17:57','2025-03-28 01:04:20','2025-03-28 01:04:20'),(15,3,79.07290500,-27.82527200,'2020-01-16 03:48:26','2025-03-28 01:04:20','2025-03-28 01:04:20'),(16,3,12.11468600,142.29040600,'1994-10-24 00:15:15','2025-03-28 01:04:20','2025-03-28 01:04:20'),(17,7,43.19971300,69.10043100,'2008-07-28 01:04:13','2025-03-28 01:04:20','2025-03-28 01:04:20'),(18,10,-18.04992900,-133.93687600,'2020-06-29 16:38:18','2025-03-28 01:04:20','2025-03-28 01:04:20'),(19,3,85.81855600,159.30085800,'1982-06-24 00:02:36','2025-03-28 01:04:20','2025-03-28 01:04:20'),(20,4,-69.07358600,99.34573200,'2006-03-08 06:00:22','2025-03-28 01:04:20','2025-03-28 01:04:20'),(21,5,22.91164400,78.07370600,'1990-08-02 00:44:13','2025-03-28 01:04:20','2025-03-28 01:04:20'),(22,3,23.27234800,43.06255100,'2020-02-28 20:51:54','2025-03-28 01:04:20','2025-03-28 01:04:20'),(23,9,88.92151700,-149.69457900,'2000-08-31 06:28:52','2025-03-28 01:04:20','2025-03-28 01:04:20'),(24,10,59.23041400,-157.66967300,'1978-03-04 07:35:45','2025-03-28 01:04:20','2025-03-28 01:04:20'),(25,6,31.43105000,-11.31835500,'1989-05-30 20:46:05','2025-03-28 01:04:20','2025-03-28 01:04:20'),(26,7,-20.39714600,23.15496300,'1989-12-29 23:49:41','2025-03-28 01:04:20','2025-03-28 01:04:20'),(27,6,-76.55974400,46.39375800,'1981-12-14 20:22:31','2025-03-28 01:04:20','2025-03-28 01:04:20'),(28,10,-76.84213000,157.93237800,'1996-04-21 16:08:08','2025-03-28 01:04:20','2025-03-28 01:04:20'),(29,8,-69.72941300,37.82349300,'1999-01-31 09:47:42','2025-03-28 01:04:20','2025-03-28 01:04:20'),(30,8,74.94946600,-43.16048000,'1995-04-22 20:34:19','2025-03-28 01:04:20','2025-03-28 01:04:20');
+/*!40000 ALTER TABLE `delivery_trackings` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+DROP TABLE IF EXISTS `failed_jobs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(255) NOT NULL,
+  `connection` text NOT NULL,
+  `queue` text NOT NULL,
+  `payload` longtext NOT NULL,
+  `exception` longtext NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `failed_jobs`
+--
+
+LOCK TABLES `failed_jobs` WRITE;
+/*!40000 ALTER TABLE `failed_jobs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `failed_jobs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `food_items`
+--
+
+DROP TABLE IF EXISTS `food_items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `food_items` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `restaurant_id` bigint(20) unsigned NOT NULL,
+  `category_id` bigint(20) unsigned NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `image_path` varchar(255) DEFAULT NULL,
+  `is_available` tinyint(1) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `food_items_category_id_foreign` (`category_id`),
+  KEY `food_items_restaurant_id_foreign` (`restaurant_id`),
+  CONSTRAINT `food_items_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `food_items_restaurant_id_foreign` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `food_items`
+--
+
+LOCK TABLES `food_items` WRITE;
+/*!40000 ALTER TABLE `food_items` DISABLE KEYS */;
+INSERT INTO `food_items` VALUES (1,14,2,'Pasta Carbonara','Assumenda nostrum iure rerum occaecati aut.',9.97,'https://via.placeholder.com/640x450.png/004433?text=food+fugit',1,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(2,1,1,'Beef Burger','Non vero eum cumque cupiditate.',17.59,'https://via.placeholder.com/640x450.png/00ee99?text=food+dolor',1,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(3,13,2,'Cheesecake','Nulla excepturi perferendis deleniti corporis et.',8.85,'https://via.placeholder.com/640x450.png/001177?text=food+voluptates',0,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(4,15,2,'Tacos','Maiores voluptas maiores nostrum eaque eaque sunt.',19.00,'https://via.placeholder.com/640x450.png/0000bb?text=food+non',1,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(5,2,1,'Ramen','Voluptas voluptate et rerum eius.',1.39,'https://via.placeholder.com/640x450.png/005577?text=food+velit',1,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(6,6,4,'Fish and Chips','Culpa rerum et quia dolorem.',9.19,'https://via.placeholder.com/640x450.png/0044dd?text=food+consequatur',1,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(7,3,3,'Tiramisu','Et veritatis earum nisi fugiat.',15.06,'https://via.placeholder.com/640x450.png/00bbdd?text=food+quae',0,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(8,14,5,'Margherita Pizza','Aut inventore minima voluptas aut ab a quam.',15.38,'https://via.placeholder.com/640x450.png/005511?text=food+qui',1,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(9,3,4,'Falafel Wrap','Magnam eum nihil quidem placeat sit.',2.31,'https://via.placeholder.com/640x450.png/0099aa?text=food+cupiditate',0,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(10,1,4,'Sushi Platter','Nesciunt alias minima odit est aut minus.',13.62,'https://via.placeholder.com/640x450.png/0033ee?text=food+qui',1,'2025-03-28 01:04:19','2025-03-28 01:04:19');
+/*!40000 ALTER TABLE `food_items` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `job_batches`
+--
+
+DROP TABLE IF EXISTS `job_batches`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `job_batches` (
+  `id` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `total_jobs` int(11) NOT NULL,
+  `pending_jobs` int(11) NOT NULL,
+  `failed_jobs` int(11) NOT NULL,
+  `failed_job_ids` longtext NOT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `cancelled_at` int(11) DEFAULT NULL,
+  `created_at` int(11) NOT NULL,
+  `finished_at` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `job_batches`
+--
+
+LOCK TABLES `job_batches` WRITE;
+/*!40000 ALTER TABLE `job_batches` DISABLE KEYS */;
+/*!40000 ALTER TABLE `job_batches` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `jobs`
+--
+
+DROP TABLE IF EXISTS `jobs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `jobs` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `queue` varchar(255) NOT NULL,
+  `payload` longtext NOT NULL,
+  `attempts` tinyint(3) unsigned NOT NULL,
+  `reserved_at` int(10) unsigned DEFAULT NULL,
+  `available_at` int(10) unsigned NOT NULL,
+  `created_at` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `jobs_queue_index` (`queue`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `jobs`
+--
+
+LOCK TABLES `jobs` WRITE;
+/*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `migrations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migrations`
+--
+
+LOCK TABLES `migrations` WRITE;
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+INSERT INTO `migrations` VALUES (1,'0001_01_01_000000_create_users_table',1),(2,'0001_01_01_000001_create_cache_table',1),(3,'0001_01_01_000002_create_jobs_table',1),(4,'2025_03_15_133730_create_categories_table',1),(5,'2025_03_15_133751_create_food_items_table',1),(6,'2025_03_15_133817_create_cart_items_table',1),(7,'2025_03_15_133834_create_orders_table',1),(8,'2025_03_15_133852_create_order_items_table',1),(9,'2025_03_15_133926_create_payments_table',1),(10,'2025_03_15_134001_create_notifications_table',1),(11,'2025_03_19_233053_create_personal_access_tokens_table',1),(12,'2025_03_25_140138_create_addresses_table',1),(13,'2025_03_25_185515_create_delivery_statues_table',1),(14,'2025_03_25_185537_create_delivery_trackings_table',1);
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `notifications`
+--
+
+DROP TABLE IF EXISTS `notifications`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `notifications` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) unsigned NOT NULL,
+  `message` text NOT NULL,
+  `is_read` tinyint(1) NOT NULL DEFAULT 0,
+  `read_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `notifications_user_id_foreign` (`user_id`),
+  CONSTRAINT `notifications_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `notifications`
+--
+
+LOCK TABLES `notifications` WRITE;
+/*!40000 ALTER TABLE `notifications` DISABLE KEYS */;
+/*!40000 ALTER TABLE `notifications` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `order_items`
+--
+
+DROP TABLE IF EXISTS `order_items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `order_items` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `order_id` bigint(20) unsigned NOT NULL,
+  `food_item_id` bigint(20) unsigned NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `price` decimal(8,2) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `order_items_order_id_foreign` (`order_id`),
+  KEY `order_items_food_item_id_foreign` (`food_item_id`),
+  CONSTRAINT `order_items_food_item_id_foreign` FOREIGN KEY (`food_item_id`) REFERENCES `food_items` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `order_items_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `order_items`
+--
+
+LOCK TABLES `order_items` WRITE;
+/*!40000 ALTER TABLE `order_items` DISABLE KEYS */;
+INSERT INTO `order_items` VALUES (1,1,1,10,47.82,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(2,9,3,2,25.77,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(3,8,9,5,25.17,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(4,4,7,6,49.98,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(5,1,10,1,1.44,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(6,8,6,9,16.98,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(7,6,10,2,10.61,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(8,5,9,4,8.37,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(9,8,6,5,27.36,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(10,6,3,9,19.24,'2025-03-28 01:04:19','2025-03-28 01:04:19');
+/*!40000 ALTER TABLE `order_items` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `orders`
+--
+
+DROP TABLE IF EXISTS `orders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `orders` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) unsigned NOT NULL,
+  `status` enum('pending','processing','completed','cancelled') NOT NULL DEFAULT 'pending',
+  `total_price` decimal(8,2) NOT NULL,
+  `payment_status` varchar(255) NOT NULL DEFAULT 'unpaid',
+  `restaurant_id` bigint(20) unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `orders_user_id_foreign` (`user_id`),
+  KEY `orders_restaurant_id_foreign` (`restaurant_id`),
+  CONSTRAINT `orders_restaurant_id_foreign` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`),
+  CONSTRAINT `orders_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orders`
+--
+
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (1,3,'cancelled',25.75,'paid',3,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(2,26,'cancelled',2.85,'unpaid',5,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(3,11,'pending',39.03,'unpaid',12,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(4,39,'pending',42.34,'unpaid',12,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(5,30,'pending',60.83,'paid',3,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(6,20,'pending',69.47,'paid',7,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(7,3,'completed',27.56,'paid',4,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(8,33,'cancelled',80.74,'paid',14,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(9,27,'cancelled',72.24,'unpaid',8,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(10,34,'pending',7.65,'unpaid',12,'2025-03-28 01:04:19','2025-03-28 01:04:19');
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `password_reset_tokens`
+--
+
+DROP TABLE IF EXISTS `password_reset_tokens`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `password_reset_tokens` (
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `password_reset_tokens`
+--
+
+LOCK TABLES `password_reset_tokens` WRITE;
+/*!40000 ALTER TABLE `password_reset_tokens` DISABLE KEYS */;
+/*!40000 ALTER TABLE `password_reset_tokens` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `payments`
+--
+
+DROP TABLE IF EXISTS `payments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `payments` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `order_id` bigint(20) unsigned NOT NULL,
+  `amount` decimal(8,2) NOT NULL,
+  `payment_method` enum('card','cash','paypal') NOT NULL DEFAULT 'card',
+  `status` enum('pending','paid','failed') NOT NULL DEFAULT 'pending',
+  `transaction_id` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `payments_order_id_foreign` (`order_id`),
+  CONSTRAINT `payments_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `payments`
+--
+
+LOCK TABLES `payments` WRITE;
+/*!40000 ALTER TABLE `payments` DISABLE KEYS */;
+/*!40000 ALTER TABLE `payments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `personal_access_tokens`
+--
+
+DROP TABLE IF EXISTS `personal_access_tokens`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `personal_access_tokens` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `tokenable_type` varchar(255) NOT NULL,
+  `tokenable_id` bigint(20) unsigned NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `token` varchar(64) NOT NULL,
+  `abilities` text DEFAULT NULL,
+  `last_used_at` timestamp NULL DEFAULT NULL,
+  `expires_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
+  KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `personal_access_tokens`
+--
+
+LOCK TABLES `personal_access_tokens` WRITE;
+/*!40000 ALTER TABLE `personal_access_tokens` DISABLE KEYS */;
+/*!40000 ALTER TABLE `personal_access_tokens` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `restaurants`
+--
+
+DROP TABLE IF EXISTS `restaurants`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `restaurants` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `owner_id` bigint(20) unsigned NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` text DEFAULT NULL,
+  `logo_url` varchar(255) DEFAULT NULL,
+  `opening_time` time DEFAULT NULL,
+  `closing_time` time DEFAULT NULL,
+  `is_active` tinyint(1) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `restaurants_owner_id_foreign` (`owner_id`),
+  CONSTRAINT `restaurants_owner_id_foreign` FOREIGN KEY (`owner_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `restaurants`
+--
+
+LOCK TABLES `restaurants` WRITE;
+/*!40000 ALTER TABLE `restaurants` DISABLE KEYS */;
+INSERT INTO `restaurants` VALUES (1,31,'Mrs. Savanah Harber','Magnam sit magnam cum aut minima voluptatem.','https://via.placeholder.com/640x480.png/008811?text=odio','00:00:23','00:00:23',0,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(2,32,'Dr. Zola Durgan','Et reiciendis dolor cupiditate fugiat animi quasi et.','https://via.placeholder.com/640x480.png/002277?text=perferendis','00:00:09','00:00:13',1,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(3,33,'Maximilian Hegmann','Ratione natus qui nulla.','https://via.placeholder.com/640x480.png/0099ee?text=voluptas','00:00:16','00:00:00',1,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(4,34,'Mr. Maxwell Moen','Minus adipisci dolore in nostrum aspernatur autem non est.','https://via.placeholder.com/640x480.png/00aadd?text=dolor','00:00:05','00:00:09',0,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(5,35,'Estella Sipes','Repellendus voluptatem nihil reprehenderit asperiores molestiae.','https://via.placeholder.com/640x480.png/007755?text=sunt','00:00:13','00:00:04',1,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(6,36,'Dr. Vinnie Graham','Dolores vel in corrupti aut dolores asperiores earum.','https://via.placeholder.com/640x480.png/008877?text=corporis','00:00:16','00:00:13',1,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(7,37,'Torey Morar','Aperiam voluptates aut eos sunt culpa.','https://via.placeholder.com/640x480.png/0099bb?text=quo','00:00:09','00:00:00',1,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(8,38,'Prof. Kaci Spencer','Aut officia iusto rem et inventore dolor quia.','https://via.placeholder.com/640x480.png/00dd66?text=aut','00:00:19','00:00:21',0,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(9,39,'Jonatan Leffler','Quaerat est sed nihil pariatur inventore repudiandae dolores.','https://via.placeholder.com/640x480.png/00aa11?text=qui','00:00:05','00:00:19',1,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(10,40,'Halie Gerhold','Voluptatem qui et voluptatem sed alias blanditiis.','https://via.placeholder.com/640x480.png/00dddd?text=unde','00:00:13','00:00:07',1,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(11,41,'Josie Boyle','Molestiae quos aperiam repudiandae maiores nemo.','https://via.placeholder.com/640x480.png/00ff44?text=quasi','00:00:09','00:00:11',0,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(12,42,'Miss Oceane Zulauf','Sit qui eius corrupti vero dolores.','https://via.placeholder.com/640x480.png/00ff77?text=libero','00:00:21','00:00:03',0,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(13,43,'Mia Gleichner','Deserunt nisi distinctio mollitia et.','https://via.placeholder.com/640x480.png/0011dd?text=et','00:00:17','00:00:13',0,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(14,44,'Camille Purdy DDS','Est atque numquam id mollitia ipsa doloribus voluptate.','https://via.placeholder.com/640x480.png/007744?text=in','00:00:02','00:00:05',1,'2025-03-28 01:04:19','2025-03-28 01:04:19'),(15,45,'Daija Rosenbaum','Qui sunt voluptas esse reprehenderit quod ipsa incidunt.','https://via.placeholder.com/640x480.png/00aa99?text=pariatur','00:00:14','00:00:09',0,'2025-03-28 01:04:19','2025-03-28 01:04:19');
+/*!40000 ALTER TABLE `restaurants` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sessions`
+--
+
+DROP TABLE IF EXISTS `sessions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sessions` (
+  `id` varchar(255) NOT NULL,
+  `user_id` bigint(20) unsigned DEFAULT NULL,
+  `ip_address` varchar(45) DEFAULT NULL,
+  `user_agent` text DEFAULT NULL,
+  `payload` longtext NOT NULL,
+  `last_activity` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `sessions_user_id_index` (`user_id`),
+  KEY `sessions_last_activity_index` (`last_activity`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sessions`
+--
+
+LOCK TABLES `sessions` WRITE;
+/*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
+INSERT INTO `sessions` VALUES ('I4351T5ZaUzNIYZXnVaOn4aRWs8zpmZInRNM7LCn',NULL,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36','YTozOntzOjY6Il90b2tlbiI7czo0MDoiMXB6QjJsa1NXdkpZbzhRd3NpeTUwZ0ZZN0VoNll3eTI1QVg0VkI0aCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC91c2VycyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=',1743724237),('yDmf3OgEYqAgqUA7KVyawp0Mm9O1V2uoLWNer39C',NULL,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36','YTozOntzOjY6Il90b2tlbiI7czo0MDoiMnhyalprWmJ2N1cxUlJLV1MwN2JrbzlkVXdEUkRDYjVQZlRCVUt5cCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=',1743134701);
+/*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` enum('Admin','Client','Delivery') NOT NULL DEFAULT 'Client',
+  `profile_picture` varchar(255) DEFAULT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `birthday` date DEFAULT NULL,
+  `google_id` varchar(255) DEFAULT NULL,
+  `facebook_id` varchar(255) DEFAULT NULL,
+  `apple_id` varchar(255) DEFAULT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`),
+  UNIQUE KEY `users_phone_unique` (`phone`)
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Mrs. Susie Roberts','abernathy.albina@example.com','061156299','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Admin','https://via.placeholder.com/650x450.png/007788?text=person+placeat','2025-03-28 01:04:19','2010-09-18',NULL,NULL,NULL,'xpoCMGlZ6G','2025-03-28 01:04:19','2025-03-28 01:04:19'),(2,'Jacinto Hermiston','garrison.hamill@example.net','675711122','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Delivery','https://via.placeholder.com/650x450.png/0033ff?text=person+ratione','2025-03-28 01:04:19','1971-05-30',NULL,NULL,NULL,'Ft21UxY4g8','2025-03-28 01:04:19','2025-03-28 01:04:19'),(3,'Dr. Evan Braun','nannie00@example.net','722123452','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Client','https://via.placeholder.com/650x450.png/00ccbb?text=person+occaecati','2025-03-28 01:04:19','1975-03-15',NULL,NULL,NULL,'dU0ZLhcG3Q','2025-03-28 01:04:19','2025-03-28 01:04:19'),(4,'Dr. Erick Ernser','eauer@example.net','072920357','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Client','https://via.placeholder.com/650x450.png/00dd22?text=person+placeat','2025-03-28 01:04:19','2003-09-19',NULL,NULL,NULL,'MG5bocwTUC','2025-03-28 01:04:19','2025-03-28 01:04:19'),(5,'Ava Buckridge','feeney.angeline@example.net','727453695','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Delivery','https://via.placeholder.com/650x450.png/00ff66?text=person+nisi','2025-03-28 01:04:19','2001-10-07',NULL,NULL,NULL,'4Ym2UILJKz','2025-03-28 01:04:19','2025-03-28 01:04:19'),(6,'Vernie Hahn','lehner.wallace@example.com','898253674','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Admin','https://via.placeholder.com/650x450.png/000011?text=person+nam','2025-03-28 01:04:19','1974-09-25',NULL,NULL,NULL,'VMyOJtuhGI','2025-03-28 01:04:19','2025-03-28 01:04:19'),(7,'Colin Tremblay','bertram.okuneva@example.net','829473819','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Delivery','https://via.placeholder.com/650x450.png/009977?text=person+cum','2025-03-28 01:04:19','1991-01-22',NULL,NULL,NULL,'OATNbDH8ew','2025-03-28 01:04:19','2025-03-28 01:04:19'),(8,'Miss Alanna Stamm II','corine.smitham@example.net','801179062','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Delivery','https://via.placeholder.com/650x450.png/0044ff?text=person+dicta','2025-03-28 01:04:19','1982-01-16',NULL,NULL,NULL,'0dgcuQZjEt','2025-03-28 01:04:19','2025-03-28 01:04:19'),(9,'Ms. Catharine Boehm PhD','dbaumbach@example.com','214943745','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Delivery','https://via.placeholder.com/650x450.png/0022ff?text=person+aut','2025-03-28 01:04:19','2003-02-16',NULL,NULL,NULL,'gbTUAb46Z8','2025-03-28 01:04:19','2025-03-28 01:04:19'),(10,'Jonas Cassin II','nlittle@example.com','817259397','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Admin','https://via.placeholder.com/650x450.png/0033aa?text=person+dolor','2025-03-28 01:04:19','2007-08-06',NULL,NULL,NULL,'6yOg3tA90z','2025-03-28 01:04:19','2025-03-28 01:04:19'),(11,'Nicola Runte','emmanuelle.huels@example.org','030518905','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Delivery','https://via.placeholder.com/650x450.png/00bbaa?text=person+recusandae','2025-03-28 01:04:19','2021-02-06',NULL,NULL,NULL,'EUUBTSbdam','2025-03-28 01:04:19','2025-03-28 01:04:19'),(12,'Holly Zemlak','malinda83@example.net','274892948','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Admin','https://via.placeholder.com/650x450.png/00ffbb?text=person+adipisci','2025-03-28 01:04:19','2019-12-16',NULL,NULL,NULL,'l3iXVIrbNG','2025-03-28 01:04:19','2025-03-28 01:04:19'),(13,'Haskell Swaniawski','rarmstrong@example.org','687785718','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Client','https://via.placeholder.com/650x450.png/00ff66?text=person+dignissimos','2025-03-28 01:04:19','2013-10-23',NULL,NULL,NULL,'AFbwshXG9g','2025-03-28 01:04:19','2025-03-28 01:04:19'),(14,'Gladyce Williamson','kohler.carmella@example.net','412469295','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Admin','https://via.placeholder.com/650x450.png/00cc00?text=person+autem','2025-03-28 01:04:19','2001-10-17',NULL,NULL,NULL,'OclCjHWfZw','2025-03-28 01:04:19','2025-03-28 01:04:19'),(15,'Monique Hirthe','dejah.roob@example.com','546468620','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Client','https://via.placeholder.com/650x450.png/005588?text=person+a','2025-03-28 01:04:19','1980-05-22',NULL,NULL,NULL,'mMg6KcAVNI','2025-03-28 01:04:19','2025-03-28 01:04:19'),(16,'Adalberto Harvey','olin.walsh@example.org','371664751','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Client','https://via.placeholder.com/650x450.png/00ff11?text=person+quis','2025-03-28 01:04:19','1978-04-14',NULL,NULL,NULL,'CaacEJNTkn','2025-03-28 01:04:19','2025-03-28 01:04:19'),(17,'Beryl Ernser','mabelle52@example.org','686351621','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Delivery','https://via.placeholder.com/650x450.png/004455?text=person+non','2025-03-28 01:04:19','1978-12-13',NULL,NULL,NULL,'UAM0I7FNPX','2025-03-28 01:04:19','2025-03-28 01:04:19'),(18,'Prof. Dexter Rippin','cboehm@example.com','358196540','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Client','https://via.placeholder.com/650x450.png/0088bb?text=person+neque','2025-03-28 01:04:19','1983-08-31',NULL,NULL,NULL,'sR5NWJxTdk','2025-03-28 01:04:19','2025-03-28 01:04:19'),(19,'Paige Ferry','yadams@example.net','320113939','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Client','https://via.placeholder.com/650x450.png/007799?text=person+porro','2025-03-28 01:04:19','1997-04-09',NULL,NULL,NULL,'e9tESsXc0o','2025-03-28 01:04:19','2025-03-28 01:04:19'),(20,'Francisca Stanton II','rreinger@example.org','708854285','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Admin','https://via.placeholder.com/650x450.png/003300?text=person+quod','2025-03-28 01:04:19','1974-03-09',NULL,NULL,NULL,'VMdIJ5QtDi','2025-03-28 01:04:19','2025-03-28 01:04:19'),(21,'Jermey Ullrich','wintheiser.delia@example.net','997980093','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Client','https://via.placeholder.com/650x450.png/006622?text=person+dolorum','2025-03-28 01:04:19','2008-12-12',NULL,NULL,NULL,'GTDuUQ92H1','2025-03-28 01:04:19','2025-03-28 01:04:19'),(22,'Hailie Bogan','madison.schmitt@example.net','834820888','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Client','https://via.placeholder.com/650x450.png/0011ff?text=person+neque','2025-03-28 01:04:19','1975-03-18',NULL,NULL,NULL,'1DAFU5uLBo','2025-03-28 01:04:19','2025-03-28 01:04:19'),(23,'Miss Dolly Kilback','eleanore54@example.com','488944243','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Delivery','https://via.placeholder.com/650x450.png/00cc55?text=person+quia','2025-03-28 01:04:19','2024-02-22',NULL,NULL,NULL,'Gf5aVitPZ8','2025-03-28 01:04:19','2025-03-28 01:04:19'),(24,'Roberto Hirthe','rosendo36@example.org','070812085','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Admin','https://via.placeholder.com/650x450.png/0044cc?text=person+minima','2025-03-28 01:04:19','1973-06-28',NULL,NULL,NULL,'n6ktr1Dsr1','2025-03-28 01:04:19','2025-03-28 01:04:19'),(25,'Autumn Bartoletti','qblanda@example.com','636912817','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Delivery','https://via.placeholder.com/650x450.png/006655?text=person+architecto','2025-03-28 01:04:19','2000-11-16',NULL,NULL,NULL,'lDjMMJQKm3','2025-03-28 01:04:19','2025-03-28 01:04:19'),(26,'Moshe Osinski','tnikolaus@example.net','564000527','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Admin','https://via.placeholder.com/650x450.png/006644?text=person+facilis','2025-03-28 01:04:19','2019-04-22',NULL,NULL,NULL,'PZlN2if2ci','2025-03-28 01:04:19','2025-03-28 01:04:19'),(27,'Brenna Prosacco','ujenkins@example.net','863110302','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Client','https://via.placeholder.com/650x450.png/00eeff?text=person+consequuntur','2025-03-28 01:04:19','1990-10-26',NULL,NULL,NULL,'6Cc64e3ZFX','2025-03-28 01:04:19','2025-03-28 01:04:19'),(28,'Bell Windler','alec26@example.net','752797830','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Admin','https://via.placeholder.com/650x450.png/007722?text=person+dolor','2025-03-28 01:04:19','2020-06-27',NULL,NULL,NULL,'QtLTnOQaZL','2025-03-28 01:04:19','2025-03-28 01:04:19'),(29,'Tony Heller','alexandre.ankunding@example.net','367811753','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Client','https://via.placeholder.com/650x450.png/00dd33?text=person+minus','2025-03-28 01:04:19','2007-04-15',NULL,NULL,NULL,'vIOIy9ucrw','2025-03-28 01:04:19','2025-03-28 01:04:19'),(30,'Frederique Kunze','laurine35@example.net','168939587','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Delivery','https://via.placeholder.com/650x450.png/0066bb?text=person+quia','2025-03-28 01:04:19','2019-09-21',NULL,NULL,NULL,'AUjzPvPaEd','2025-03-28 01:04:19','2025-03-28 01:04:19'),(31,'Shanon Becker','kim26@example.com','971473438','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Client','https://via.placeholder.com/650x450.png/003322?text=person+dolores','2025-03-28 01:04:19','1997-05-06',NULL,NULL,NULL,'cd6i9uTrGW','2025-03-28 01:04:19','2025-03-28 01:04:19'),(32,'Ms. Savanna Jakubowski','jtoy@example.com','706129851','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Admin','https://via.placeholder.com/650x450.png/001122?text=person+recusandae','2025-03-28 01:04:19','2009-01-19',NULL,NULL,NULL,'AkAxYnnigR','2025-03-28 01:04:19','2025-03-28 01:04:19'),(33,'Barry Cassin','levi60@example.net','136606849','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Admin','https://via.placeholder.com/650x450.png/00bb66?text=person+quia','2025-03-28 01:04:19','1985-01-30',NULL,NULL,NULL,'Kyyvi6hsdo','2025-03-28 01:04:19','2025-03-28 01:04:19'),(34,'Doyle Herzog','dayne32@example.net','603601718','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Admin','https://via.placeholder.com/650x450.png/008833?text=person+aut','2025-03-28 01:04:19','2011-07-28',NULL,NULL,NULL,'UHnEjacuuy','2025-03-28 01:04:19','2025-03-28 01:04:19'),(35,'Conner Hodkiewicz Jr.','mckenzie40@example.net','319827248','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Client','https://via.placeholder.com/650x450.png/00aa44?text=person+et','2025-03-28 01:04:19','2009-02-05',NULL,NULL,NULL,'kf5toCmGRy','2025-03-28 01:04:19','2025-03-28 01:04:19'),(36,'Mr. Connor Medhurst V','destinee.davis@example.org','828394195','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Client','https://via.placeholder.com/650x450.png/009999?text=person+architecto','2025-03-28 01:04:19','2013-11-05',NULL,NULL,NULL,'CoH5gk9Z1Z','2025-03-28 01:04:19','2025-03-28 01:04:19'),(37,'June Cummings','nicholas65@example.com','823276509','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Delivery','https://via.placeholder.com/650x450.png/00ff55?text=person+et','2025-03-28 01:04:19','1998-05-19',NULL,NULL,NULL,'LGsaoepRJB','2025-03-28 01:04:19','2025-03-28 01:04:19'),(38,'Florence Kunze','ondricka.golden@example.com','275434919','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Admin','https://via.placeholder.com/650x450.png/00bb22?text=person+omnis','2025-03-28 01:04:19','1983-07-17',NULL,NULL,NULL,'L8rJDFnYoM','2025-03-28 01:04:19','2025-03-28 01:04:19'),(39,'Shawna Pacocha','ottis.rutherford@example.org','665634658','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Admin','https://via.placeholder.com/650x450.png/00ccaa?text=person+doloribus','2025-03-28 01:04:19','1986-12-07',NULL,NULL,NULL,'Qjgttfz42m','2025-03-28 01:04:19','2025-03-28 01:04:19'),(40,'Mylene Spencer','jjenkins@example.com','470286828','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Client','https://via.placeholder.com/650x450.png/0000bb?text=person+aut','2025-03-28 01:04:19','2016-11-06',NULL,NULL,NULL,'2anI2dDyyd','2025-03-28 01:04:19','2025-03-28 01:04:19'),(41,'Ethan Gutkowski','schuppe.keven@example.org','468787500','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Delivery','https://via.placeholder.com/650x450.png/004499?text=person+sint','2025-03-28 01:04:19','2006-08-08',NULL,NULL,NULL,'jZb6rToyvt','2025-03-28 01:04:19','2025-03-28 01:04:19'),(42,'Nicholas Lueilwitz III','jon.bruen@example.net','956699524','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Delivery','https://via.placeholder.com/650x450.png/006699?text=person+et','2025-03-28 01:04:19','1979-03-23',NULL,NULL,NULL,'DLOZ9lOx7r','2025-03-28 01:04:19','2025-03-28 01:04:19'),(43,'Linda Emard','oran.mayert@example.org','917221675','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Client','https://via.placeholder.com/650x450.png/004422?text=person+quis','2025-03-28 01:04:19','1975-12-26',NULL,NULL,NULL,'IUEvqNLbJ1','2025-03-28 01:04:19','2025-03-28 01:04:19'),(44,'Mrs. Kelsie Koch','hoeger.miles@example.org','549042302','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Delivery','https://via.placeholder.com/650x450.png/003399?text=person+delectus','2025-03-28 01:04:19','1978-12-01',NULL,NULL,NULL,'KyGhSeFxKV','2025-03-28 01:04:19','2025-03-28 01:04:19'),(45,'Prof. Sophia Fisher Jr.','mario33@example.org','559184204','$2y$12$6W22ZcQ45D/cxCG9MhmqTu25Hbo83T7LStx1nhYCel1kAlF9N6g7.','Client','https://via.placeholder.com/650x450.png/0055ee?text=person+inventore','2025-03-28 01:04:19','2014-02-18',NULL,NULL,NULL,'8EEoTr62oY','2025-03-28 01:04:19','2025-03-28 01:04:19');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2025-04-05 20:19:53
