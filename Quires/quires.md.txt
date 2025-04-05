@@ -1,0 +1,38 @@
+# Project Queries Documentation using ORM
+
+## User Queries
+- Get all users : ` User::all()`
+- Find specific User : `User:Find(1)`
+
+## Order Queries
+- Get all Orders : ` Order::all()`
+
+## Address Queries 
+- Get all Address : `Address::all()`
+
+## CartItem Queries 
+- Get all CartItem : `CartItem::all()`
+
+## Category Queries 
+- Get all Category : `Category::all()`
+
+##  DeliveryStatuses Queries 
+- Get all DeliveryStatuses : `DeliveryStatuses::all()`
+
+## DeliveryTracking Queries 
+- Get all DeliveryTracking : `DeliveryTracking::all()`
+
+## FoodItem Queries 
+- Get all FoodItem : `FoodItem::all()`
+
+## Notification Queries 
+- Get all Notification : `Notification::all()`
+
+## OrderItem Queries 
+- Get all OrderItem : `OrderItem::all()`
+
+## Payment Queries 
+- Get all Payment : `Payment::all()`\
+
+## Restaurant Queries 
+- Get all Restaurant : `Restaurant::all()`
